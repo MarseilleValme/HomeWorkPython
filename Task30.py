@@ -5,6 +5,6 @@ a = []
 a.append(int(input('Введите 1-й элемент массива: ')))
 d = int(input('Введите разность: '))
 a_length = int(input('Введите длинну массива: '))
-for i in range(2, a_length):
-    a.append(a[0]+(i-1)*d)
+for i in range(1, a_length):
+    a.append(a[0]+i*d)
 print(a)
