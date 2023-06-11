@@ -22,7 +22,7 @@ phrase = poem.split()
 
 # for i in range(len(phrase)):
 #     phrase[i] = sum(1 for x in phrase[i] if x in 'аяуюоеёэиы')  
-if same_by(lambda x: sum(1 for x in phrase if x in 'аяуюоеёэиы'), phrase):
+if same_by(lambda x: sum(1 for item in phrase for x in item if x in 'аяуюоеёэиы'), phrase):
     print('Парам пам-пам')
 else:
     print('Пам парам') 
