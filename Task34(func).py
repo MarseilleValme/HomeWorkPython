@@ -7,11 +7,11 @@
 # и “Пам парам”, если с ритмом все не в порядке
 # **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да
 #     **Вывод:** Парам пам-пам
+# from typing import Callable
 def same_by(func, list_obj: list):
     result = []
-    for item in list_obj:
-        result.append(func(item))
-        print(result)
+    for obj in list_obj:
+        result.append(func(obj))
     if len(set(result)) == 1:
         return True
     return False
@@ -20,9 +20,7 @@ poem = 'пара-ра-рам-пи рам-пам-папам-пу па-ра-па-�
 print(poem)
 phrase = poem.split()
 
-# for i in range(len(phrase)):
-#     phrase[i] = sum(1 for x in phrase[i] if x in 'аяуюоеёэиы')  
-if same_by(lambda x: sum(1 for item in phrase for x in item if x in 'аяуюоеёэиы'), phrase):
+if same_by(lambda x: sum(1 for x in filter(lambda x: x in 'аяуюоеёэиы', phrase[0])), phrase):
     print('Парам пам-пам')
 else:
     print('Пам парам') 

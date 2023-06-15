@@ -12,7 +12,9 @@ print(poem)
 phrase = poem.split()
 
 for i in range(len(phrase)):
-    phrase[i] = sum(1 for x in phrase[i] if x in 'аяуюоеёэиы')  #Перезаписываем в список подстрок кол-во гласных букв в этих подстроках
+    phrase[i] = sum(1 for x in filter(lambda x: x in 'аяуюоеёэиы', phrase[i]))#Перезаписываем в список подстрок кол-во гласных букв в 
+                                                                              #этих подстроках
+
 if len(set(phrase)) == 1:   #Если кол-во гласных оказалось одинаковым во всех подстроках, set, убрав повторы, сведёт всё к одному элементу
     print('Парам пам-пам')
 else:
